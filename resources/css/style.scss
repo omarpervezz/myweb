@@ -1,0 +1,439 @@
+// google font import
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,500;0,600;1,300&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
+@import url("./font.css");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,500;0,600;1,300&family=Quattrocento:wght@400;700&family=Russo+One&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import './icon';
+@import './reboundanimation';
+// Global variable
+$dark-blue: #222;
+$green: #90feb5;
+$action-color: $green;
+$color: #00A97F;
+$text-color:#0febb4;
+$white:#f0f0f0;
+$color2: rgb(10,
+25,
+30);
+$fontHead: "Work Sans",
+sans-serif;
+$BigFont: "Russo One",
+sans-serif;
+$socialFont: 'Montserrat',
+sans-serif;
+$colorF: #ffffff;
+$layout-breakpoint-lg:992px;
+$layout-breakpoint-md:768px;
+$layout-breakpoint-small:576px;
+// basic css
+* {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(242, 245, 247);
+    letter-spacing: 0.1rem;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.btn {
+    padding: 0.9rem 4.95rem;
+    margin-top: 1.9rem;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid $color;
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: $color;
+    z-index: 800;
+}
+
+.btn::after,
+.btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: $color;
+}
+
+.btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+    color: $white;
+}
+
+.btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+}
+
+body {
+    text-rendering: optimizelegibility;
+    overflow-x: hidden;
+    font-family: $fontHead;
+    background: rgb(0, 0, 0);
+}
+
+// global css
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+section {
+    padding: 2rem 0px;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+// header css
+header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+    width: 100%;
+    transition-property: background, border-bottom;
+    transition-duration: 3s;
+    z-index: 999;
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 97px;
+        .logo_link {
+            text-decoration: none;
+            h4 {
+                span {
+                    color: #C9C5C3;
+                }
+            }
+            .logo {
+                padding: 1.4vh 1vw;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                img {
+                    height: 5rem;
+                    width: 5rem;
+                    margin-top: 16px;
+                    margin-right: 7px;
+                    border: 4px solid #41e5bc;
+                    border-radius: 50%;
+                }
+                .logo_text {
+                    font-family: $BigFont;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 2rem;
+                    width: 14rem;
+                    font-size: 3.9rem;
+                    font-weight: 700;
+                    color: #41e5bc;
+                    margin-top: 22px;
+                }
+            }
+        }
+        ul {
+            margin-top: 4.9rem;
+            li {
+                display: inline-block;
+                a {
+                    font-family: $fontHead;
+                    text-decoration: none;
+                    margin: 0 1.5rem;
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    padding: 0.5rem 2rem;
+                    border: 0.3px solid #41e5bc;
+                    color: #41e5bc;
+                    border-radius: 1.7rem;
+                }
+                 :hover {
+                    color: $text-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .hamburger {
+        overflow: hidden;
+        position: absolute;
+        right: 4rem;
+        top: 42px;
+        cursor: pointer;
+        display: none;
+        div {
+            width: 30px;
+            height: 2px;
+            background-color: #c9c5c3;
+            margin: 5px 0px;
+            display: flex;
+            transition: all 0.3s ease 0s;
+        }
+        .line2 {
+            width: 15px;
+            transition-property: width;
+            transition-duration: 0.3s;
+        }
+    }
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-3px, -5px);
+    }
+} // end header
+.nav_bg_adder {
+    background: rgb(0, 0, 0);
+    border-bottom: 0.2px solid rgb(38, 41, 46);
+}
+
+// header responsive css
+@media only screen and (max-width: $layout-breakpoint-lg) {
+    header nav {
+        flex-direction: column;
+    }
+    .first_div {
+        transition-property: right, background, opacity;
+        transition-duration: 0.5s;
+        width: 45rem;
+        height: 400px;
+        overflow: hidden;
+        z-index: 1000;
+        position: fixed;
+        right: -530px;
+        box-shadow: rgba(0, 0, 0, 0.75) -9px 11px 14px 6px;
+        top: 25rem;
+        opacity: 0.5;
+    }
+    .adding_div {
+        background: rgba(5, 110, 100, 0.48);
+        right: 0px;
+        z-index: 100;
+        opacity: 0.9;
+    }
+    header nav ul {
+        border-left: 4px solid #ffffff;
+        position: fixed;
+        right: -530px;
+        transition-property: right, background;
+        transition-duration: 1s;
+        width: 45rem;
+        top: 48px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .open {
+        background: rgb(0, 0, 0);
+        right: 0px;
+        z-index: 100;
+        overscroll-behavior-y: none;
+    }
+    header nav ul li {
+        display: block;
+        text-align: center;
+        padding: 2rem 0px;
+        opacity: 1 !important;
+    }
+    header nav ul li a {
+        color: rgb(255, 255, 255);
+    }
+    header nav .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-small) {
+    header nav ul {
+        width: 100%;
+    }
+    .first_div {
+        width: 100%;
+    }
+}
+
+// banner css
+.banner_info {
+    padding: 24rem 0 12rem 0;
+    height: 120vh;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: animateBg 15s ease infinite alternate;
+    background-size: 100% 2000%;
+    overflow: hidden;
+    @keyframes animateBg {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: 0% 100%;
+        }
+    }
+    #canvas {
+        background-color: #101011;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .omar_img {
+        width: 12.125rem;
+        height: 12.125rem;
+        max-height: 12.125rem;
+        max-width: 12.125rem;
+        border-radius: 50%;
+        background-clip: padding-box;
+        border: 4px solid #754ac2;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+        z-index: 20;
+    }
+    .text-animation {
+        margin: 29px 0 15px 0;
+        word-spacing: 1rem;
+        position: relative;
+        span {
+            font-family: $BigFont;
+            letter-spacing: .7rem;
+            font-size: 9rem;
+            background-color: #f3f0efd5;
+            background-image: linear-gradient(62deg, #f5f2f0cc 0%, #faf6f4e8 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 300;
+            word-spacing: 26px;
+        }
+         :nth-child(0),
+         :nth-child(5) {
+            color: $color !important;
+        }
+        .enter_class {
+            color: #12e4d2ea !important;
+            cursor: pointer;
+        }
+    }
+    .text-animation .letter {
+        display: inline-block;
+    }
+    .text-animation-short-info {
+        span {
+            font-size: 1.6rem;
+            color: #c9c5c3;
+            font-weight: 400;
+            margin: 0.3rem 0 1.9rem 0;
+            line-height: 15px;
+        }
+    }
+    .text-animation-short-info .letter2 {
+        display: inline-block;
+    }
+    #timer {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+} // end banner
+// about me
+.aboutMe {
+    padding: 1rem 0 4rem 0;
+    .titleOmar {
+        font-size: 5rem;
+        font-family: $BigFont;
+    }
+    .omarDescription {
+        font-size: 1.4rem;
+        font-family: $fontHead;
+        font-weight: 300;
+        line-height: 1.7;
+        color: #ddd;
+        margin-top: 2rem;
+    }
+    .download-btn {
+        font-size: 1.4rem;
+        padding: 1.1rem 2.99rem;
+        position: relative;
+        padding-right: 4rem;
+        font-weight: 500;
+        i {
+            position: absolute;
+            right: 10%;
+            top: 33%;
+            color: #2aab8a;
+            transition: 0.4s all;
+        }
+    }
+    .download-btn:hover i {
+        color: #f9f9ff;
+    }
+    #myCanvasContainer {
+        canvas {
+            margin-top: 7rem;
+        }
+    }
+    #tags {
+        a {
+            color: $color;
+            font-family: $fontHead;
+            font-weight: 700;
+            font-size: 1.9rem;
+        }
+    }
+}
+
+// about me
+@media only screen and (max-width: $layout-breakpoint-lg) {
+    #myCanvasContainer {
+        canvas {
+            margin-top: 3rem;
+        }
+    }
+}
