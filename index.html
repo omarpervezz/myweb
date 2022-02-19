@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css.map">
     <!--  NORMALIZE CSS -->
     <link rel="stylesheet" href="vendor/normalize/Normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
     <!-- SLICK SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
@@ -58,6 +58,7 @@
             </nav>
         </div>
     </header>
+
     <!--------- HEADER AREA ---------->
     <!--------- MAIN AREA ---------->
     <main>
@@ -71,7 +72,16 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12 omarAllInfo">
-                                <img src="https://turkce-sozluk.com/api/src/Avatar.png" alt="omar" class="img-fluid omar_img">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- <img src="https://turkce-sozluk.com/api/src/Avatar.png" alt="omar" class="img-fluid omar_img"> -->
+                                        <ul class="profile_container">
+                                            <li class="profile_inner">
+                                                <button class="profile"><img src="https://turkce-sozluk.com/api/src/Avatar.png" alt="profile" class="img-fluid omar_img"></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <h1 class="text-animation">Omar Pervez</h1>
@@ -106,19 +116,19 @@
         <section class="aboutMe">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 d-flex justify-content-start align-self-center">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 d-flex justify-content-start align-self-start">
                         <div class="omarbio">
-                            <h2 class="titleOmar text-left font-weight-bold">Who Am I ?</h2>
-                            <p class="omarDescription">Hi, my name is Omar! I'm a Web Designer I am very passionate and dedicated to my work. I have 4 years of experience as a professional Web Developer, with all the skills and knowledge necessary to make your project a success.
+                            <h2 class="titleOmar addTitle text-left font-weight-bold">Who Am I ?</h2>
+                            <p class="omarDescription vhs-highlight-text">Hi, my name is Omar! I'm a Web Designer I am very passionate and dedicated to my work. I have 4 years of experience as a professional Web Developer, with all the skills and knowledge necessary to make your project a success.
                                 I enjoy every step of the design process, from discussion and collaboration to execution.</p>
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="https://www.peopleperhour.com/freelancer/technology-programming/omar-pervez-front-end-web-developer-psd-to-qwjywxj" target="blank"><button class="btn download-btn"> <i class="fa fa-download"></i> Download CV</button></a>
+                                    <a href="https://www.peopleperhour.com/freelancer/technology-programming/omar-pervez-front-end-web-developer-psd-to-qwjywxj" target="blank"><button class="btn download-btn"> <i class="fa fa-download"></i>Download CV</button></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 d-flex justify-content-center justify-content-lg-end justify-content-md-end justify-content-sm-end  align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 d-flex justify-content-center justify-content-lg-end justify-content-md-end justify-content-sm-end  align-self-start">
                         <div id="myCanvasContainer" class="d-flex flex-row justify-content-center">
                             <canvas width="500" height="500" id="myCanvas">
                       <p>Anything in here will be replaced on browsers that support the canvas element</p>
@@ -126,58 +136,161 @@
                         </div>
                         <div id="tags" style="font-size: 50%">
                             <a onclick="myAudio()" href="javascript:void()" style="font-size: 2.83ex;pointer-events: none;">Animation<audio src="./resources/audio/animation.mp3"></audio></a>
-                            <a href="javascript:void()" style="font-size: 3.61ex">Background</a>
-                            <a href="javascript:void()" style="font-size: 9.64ex">Canvas</a>
-                            <a href="javascript:void()" style="font-size: 4.47ex">CHART</a>
-                            <a href="javascript:void()" style="font-size: 3.46ex">GSAP</a>
-                            <a href="javascript:void()" style="font-size: 12.32ex">Bootstraps</a>
-                            <a href="javascript:void()" style="font-size: 3.74ex">JSON</a>
-                            <a href="javascript:void()" style="font-size: 3.16ex">CSS</a>
-                            <a href="javascript:void()" style="font-size: 3.74ex">GOAT</a>
-                            <a href="javascript:void()" style="font-size: 3.16ex">Git</a>
-                            <a href="javascript:void()" style="font-size: 8.36ex">CSS3</a>
-                            <a href="javascript:void()" style="font-size: 4.36ex">React</a>
-                            <a href="javascript:void()" style="font-size: 3.32ex">HTML</a>
-                            <a href="javascript:void()" style="font-size: 10.68ex">HTML5</a>
-                            <a href="javascript:void()" style="font-size: 4.69ex">Frontend</a>
-                            <a href="javascript:void()" style="font-size: 4.8ex">Javascript</a>
-                            <a href="javascript:void()" style="font-size: 5.47ex">Website</a>
-                            <a href="javascript:void()" style="font-size: 2.65ex">Parallax</a>
-                            <a href="javascript:void()" style="font-size: 8.77ex">Jquery</a>
-                            <a href="javascript:void()" style="font-size: 2.65ex">SASS</a>
-                            <a href="javascript:void()" style="font-size: 5.92ex">Library</a>
-                            <a href="javascript:void()" style="font-size: 3.32ex">Rebound</a>
-                            <a href="javascript:void()" style="font-size: 13.23ex">Anime</a>
-                            <a href="javascript:void()" style="font-size: 2.83ex">THREE</a>
-                            <a href="javascript:void()" style="font-size: 4.58ex">ES5/ES6</a>
-                            <a href="javascript:void()" style="font-size: 3.32ex">npm</a>
-                            <a href="javascript:void()" style="font-size: 2.65ex">Script</a>
-                            <a href="javascript:void()" style="font-size: 13ex">SVG</a>
-                            <a href="javascript:void()" style="font-size: 4.47ex">BEM</a>
-                            <a href="javascript:void()" style="font-size: 12.44ex">REST</a>
-                            <a href="javascript:void()" style="font-size: 2.65ex">Tagcanvas</a>
-                            <a href="javascript:void()" style="font-size: 3.46ex">FIGMA</a>
-                            <a href="javascript:void()" style="font-size: 2.65ex">Slider</a>
-                            <a href="javascript:void()" style="font-size: 3.16ex">Portfolio</a>
+                            <a style="font-size: 3.61ex">Background</a>
+                            <a style="font-size: 9.64ex">Canvas</a>
+                            <a style="font-size: 4.47ex">CHART</a>
+                            <a style="font-size: 3.46ex">GSAP</a>
+                            <a style="font-size: 12.32ex">Bootstraps</a>
+                            <a style="font-size: 3.74ex">JSON</a>
+                            <a style="font-size: 3.16ex">CSS</a>
+                            <a style="font-size: 3.74ex">GOAT</a>
+                            <a style="font-size: 3.16ex">Git</a>
+                            <a style="font-size: 8.36ex">CSS3</a>
+                            <a style="font-size: 4.36ex">React</a>
+                            <a style="font-size: 3.32ex">HTML</a>
+                            <a style="font-size: 10.68ex">HTML5</a>
+                            <a style="font-size: 4.69ex">Frontend</a>
+                            <a style="font-size: 4.8ex">Javascript</a>
+                            <a style="font-size: 5.47ex">Website</a>
+                            <a style="font-size: 2.65ex">Parallax</a>
+                            <a style="font-size: 8.77ex">Jquery</a>
+                            <a style="font-size: 2.65ex">SASS</a>
+                            <a style="font-size: 5.92ex">Library</a>
+                            <a style="font-size: 3.32ex">Rebound</a>
+                            <a style="font-size: 13.23ex">Anime</a>
+                            <a style="font-size: 2.83ex">THREE</a>
+                            <a style="font-size: 4.58ex">ES5/ES6</a>
+                            <a style="font-size: 3.32ex">npm</a>
+                            <a style="font-size: 2.65ex">Script</a>
+                            <a style="font-size: 13ex">SVG</a>
+                            <a style="font-size: 4.47ex">BEM</a>
+                            <a style="font-size: 12.44ex">REST</a>
+                            <a style="font-size: 2.65ex">Tagcanvas</a>
+                            <a style="font-size: 3.46ex">FIGMA</a>
+                            <a style="font-size: 2.65ex">Slider</a>
+                            <a style="font-size: 3.16ex">Portfolio</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!--about me-->
+        <!--portfolio-->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-start align-self-start">
+                        <div class="omarbio">
+                            <h2 class="titleOmar addTitle text-left font-weight-bold portpolio">My Portfolio</h2>
+                            <p class="omarDescription">
+                                A small gallery of recent projects chosen by me.
+                                I've done them all together with amazing people from companies around the globe. It's only a drop in the ocean compared to the entire list.
+                                <br>
+                                Interested to see some more?  Visit <a rel="work" href="#">my work</a> page.
+                            </p>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="#" target="blank"><button class="btn see-more-btn">See More</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--portfolio-->
     </main>
     <!--------- MAIN AREA ---------->
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="vendors/js/welcome.js"></script> -->
     <script src="vendors/js/tagcanvas.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="vendors/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script> 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="./vendors/js/cssanimation-gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="resources/js/app.js"></script>
     <script>
+        // avatar hover
+        class HoverButton {
+            constructor(el) {
+                this.el = el;
+                this.hover = false;
+                this.calculatePosition();
+                this.attachEventsListener();
+            }
+
+            attachEventsListener() {
+                window.addEventListener('mousemove', e => this.onMouseMove(e));
+                window.addEventListener('resize', e => this.calculatePosition(e));
+            }
+
+            calculatePosition() {
+                gsap.set(this.el, {
+                    x: 0,
+                    y: 0,
+                    scale: 1
+                });
+
+                const box = this.el.getBoundingClientRect();
+                this.x = box.left + box.width * 0.5;
+                this.y = box.top + box.height * 0.5;
+                this.width = box.width;
+                this.height = box.height;
+            }
+
+            onMouseMove(e) {
+                let hover = false;
+                let hoverArea = this.hover ? 0.7 : 0.5;
+                let x = e.clientX - this.x;
+                let y = e.clientY - this.y;
+                let distance = Math.sqrt(x * x + y * y);
+                if (distance < this.width * hoverArea) {
+                    hover = true;
+                    if (!this.hover) {
+                        this.hover = true;
+                    }
+                    this.onHover(e.clientX, e.clientY);
+                }
+
+                if (!hover && this.hover) {
+                    this.onLeave();
+                    this.hover = false;
+                }
+            }
+
+            onHover(x, y) {
+                gsap.to(this.el, {
+                    x: (x - this.x) * 0.4,
+                    y: (y - this.y) * 0.4,
+                    scale: 1.15,
+                    ease: 'power2.out',
+                    duration: 0.4
+                });
+
+                this.el.style.zIndex = 10;
+            }
+            onLeave() {
+                gsap.to(this.el, {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    ease: 'elastic.out(1.2, 0.4)',
+                    duration: 0.7
+                });
+
+                this.el.style.zIndex = 1;
+            }
+        }
+        const btn1 = document.querySelector('li:nth-child(1) button');
+        new HoverButton(btn1);
+
+        const btn2 = document.querySelector('li:nth-child(2) button');
+        new HoverButton(btn2);
+
+        const btn3 = document.querySelector('li:nth-child(3) button');
+        new HoverButton(btn3);
     </script>
 </body>
 

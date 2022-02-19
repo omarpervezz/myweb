@@ -7,13 +7,14 @@ const overlayY = document.querySelector('.first_div');
 hamburger.addEventListener('click', () => {
     //Animate Links
     navLinks.classList.toggle("open");
-    // navLinks.classList.remove("remonve");
+    // navLinks.classList.remove("remove");
     links.forEach(link => {
         link.classList.toggle("fade");
     });
     overlayY.classList.toggle('adding_div')
         //Hamburger Animation
     hamburger.classList.toggle("toggle");
+
 });
 
 // Header Type = Fixed
@@ -24,6 +25,8 @@ $(window).scroll(function() {
 
     if (scroll > 20) {
         $("header").addClass("nav_bg_adder");
+        $("header").addClass("vhs-flicker");
+
     } else {
         $("header").removeClass("nav_bg_adder");
     }
@@ -58,8 +61,8 @@ function drawLight() {
     ctx.beginPath();
     ctx.arc(light.x, light.y, 20, 0, 2 * Math.PI);
     gradient = ctx.createRadialGradient(light.x, light.y, 0, light.x, light.y, 5);
-    gradient.addColorStop(0, "#fff");
-    gradient.addColorStop(1, "#2b2e36 ");
+    gradient.addColorStop(0, "#12e4d2ea");
+    gradient.addColorStop(1, "#000 ");
     ctx.fillStyle = gradient;
     ctx.fill();
 }
@@ -199,7 +202,8 @@ function collisionDetection(b) {
             }
         }
     }
-}
+};
+
 // anime text animation
 var element = document.getElementsByClassName("text-animation")[0];
 var element2 = document.getElementsByClassName("text-animation-short-info")[0];
@@ -212,7 +216,7 @@ const omarTitle = element.querySelectorAll('.letter');
 anime.timeline({ loop: false })
     .add({
         targets: '.text-animation .letter',
-        color: '#c9c5c3',
+
         opacity: [0, 1],
         translateZ: 0,
         duration: 1000,
@@ -221,6 +225,30 @@ anime.timeline({ loop: false })
         delay: (elem, index) => index * 260
     });
 var omarLetter = document.querySelectorAll('.letter');
+let headTitleTarget = document.querySelectorAll('.text-animation .letter');
+headTitleTarget.forEach(e => {;
+    e.addEventListener('mouseover', (ee) => {
+        addingAnimationMainTitleInSpanIn(ee);
+    });
+    e.addEventListener('mouseleave', (ee) => {
+        addingAnimationMainTitleInSpanOut(ee);
+    });
+});
+
+
+function addingAnimationMainTitleInSpanIn(element) {
+    element.target.classList.add('bounceInScale');
+    if (element.target.classList.contains('bounceInScale')) {
+        element.target.classList.add('shake-slow')
+    }
+}
+
+function addingAnimationMainTitleInSpanOut(element) {
+    if (element.target.classList.contains('bounceInScale', 'shake-slow')) {
+        element.target.classList.remove('bounceInScale', 'shake-slow')
+    }
+}
+
 // animation for all Title text
 function animateButton(el, scale, duration, elasticity, delay, opacity) {
     anime.remove(el);
@@ -248,7 +276,7 @@ for (var i = 0; i < omarLetter.length; i++) {
     }, false);
 
     omarLetter[i].addEventListener('mouseleave', function(e) {
-        e.target.classList.remove('enter_class')
+        e.target.classList.remove('enter_class');
         leaveButton(e.target)
     }, false);
 }
@@ -263,6 +291,46 @@ anime.timeline({ loop: false })
         easing: "easeOutExpo",
         delay: (elem, index) => index * 60
     });
+// who I am text animation
+var whoIam = document.querySelectorAll(".titleOmar");
+whoIam.forEach(e => {
+    e.innerHTML = e.textContent.replace(/\S/g, '<span class="letter3">$&</span>');
+})
+
+// letter 3 target
+let titleTarget = document.querySelectorAll('.titleOmar span');
+titleTarget.forEach(e => {;
+    e.addEventListener('mouseover', (ee) => {
+        addingAnimationInSpanIn(ee);
+    });
+    e.addEventListener('mouseleave', (ee) => {
+        addingAnimationInSpanOut(ee);
+    });
+});
+
+function addingAnimationInSpanIn(element) {
+    element.target.classList.add('bounceInLeft', 'shake-slow', 'titleC');
+};
+
+function addingAnimationInSpanOut(elem) {
+    if (elem.target.classList.contains('bounceInLeft', 'shake-slow')) {
+        elem.target.classList.remove('shake-slow', 'titleC')
+    }
+
+}
+
+anime.timeline({ loop: false })
+    .add({
+        targets: '.titleOmar .letter3',
+        opacity: 1,
+        translateY: 0,
+        rotate: {
+            value: 360,
+            duration: 2000,
+            easing: 'easeInExpo'
+        },
+    });
+
 //countUp
 (function($) {
     $.fn.countTo = function(options) {
@@ -367,7 +435,6 @@ jQuery(function($) {
 // skill initializing
 $(document).ready(function() {
     if (!$('#myCanvas').tagcanvas({
-            textFont: 'Russo One',
             outlineColour: '#2aab8a',
             outlineDash: 2,
             outlineDashSpace: 5,

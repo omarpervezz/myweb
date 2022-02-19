@@ -5193,6 +5193,44 @@
   transform-origin: 50% 100%;
 }
 
+.profile_container {
+  padding: 4rem 0 2rem 0;
+}
+
+.profile_inner {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px;
+}
+
+.profile_inner:nth-child(1) button {
+  background: #080808;
+  margin-top: 2rem;
+}
+
+.profile {
+  position: relative;
+  background: rebeccapurple;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+  color: white;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.profile:focus {
+  outline: none;
+  border: none;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -5209,7 +5247,7 @@ html {
   padding: 0.9rem 4.95rem;
   margin-top: 1.9rem;
   background-color: transparent;
-  border-radius: 6px;
+  border-radius: 1px;
   border: 0.3px solid #00A97F;
   -webkit-transition: .5s;
   transition: .5s;
@@ -5218,7 +5256,7 @@ html {
   cursor: pointer;
   z-index: 1;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 1.3rem;
   font-family: 'Roboto', 'Segoe UI', sans-serif;
   text-transform: uppercase;
   color: #00A97F;
@@ -5298,6 +5336,34 @@ section {
   z-index: 2;
 }
 
+.titleOmar {
+  padding-top: 4rem;
+  font-size: 5rem;
+  font-family: "Russo One", sans-serif;
+}
+
+.titleOmar span {
+  display: inline-block;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+  color: #12e4d2ea;
+}
+
+.titleOmar .titleC {
+  -webkit-transform: scale(1.2) !important;
+          transform: scale(1.2) !important;
+  color: #fff;
+}
+
+.omarDescription {
+  font-size: 1.4rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #ece8e8;
+  margin-top: 2rem;
+}
+
 header {
   position: fixed;
   top: 0px;
@@ -5352,6 +5418,10 @@ header nav .logo_link .logo img {
   margin-right: 7px;
   border: 4px solid #41e5bc;
   border-radius: 50%;
+}
+
+header nav .logo_link .logo img:hover {
+  border: 1px solid red;
 }
 
 header nav .logo_link .logo .logo_text {
@@ -5441,7 +5511,6 @@ header .toggle .line3 {
 
 .nav_bg_adder {
   background: black;
-  border-bottom: 0.2px solid #26292e;
 }
 
 @media only screen and (max-width: 992px) {
@@ -5528,8 +5597,8 @@ header .toggle .line3 {
 }
 
 .banner_info {
-  padding: 24rem 0 12rem 0;
-  height: 120vh;
+  padding: 17rem 0 15rem 0;
+  height: 140vh;
   text-align: center;
   position: relative;
   width: 100%;
@@ -5581,7 +5650,6 @@ header .toggle .line3 {
   max-width: 12.125rem;
   border-radius: 50%;
   background-clip: padding-box;
-  border: 4px solid #754ac2;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
   z-index: 20;
@@ -5597,22 +5665,13 @@ header .toggle .line3 {
   font-family: "Russo One", sans-serif;
   letter-spacing: .7rem;
   font-size: 9rem;
-  background-color: #f3f0efd5;
-  background-image: linear-gradient(62deg, #f5f2f0cc 0%, #faf6f4e8 100%);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #12e4d2ea !important;
   font-weight: 300;
   word-spacing: 26px;
 }
 
-.banner_info .text-animation :nth-child(0),
-.banner_info .text-animation :nth-child(5) {
-  color: #00A97F !important;
-}
-
 .banner_info .text-animation .enter_class {
-  color: #12e4d2ea !important;
-  cursor: pointer;
+  color: #fff !important;
 }
 
 .banner_info .text-animation .letter {
@@ -5638,29 +5697,16 @@ header .toggle .line3 {
 }
 
 .aboutMe {
-  padding: 1rem 0 4rem 0;
-}
-
-.aboutMe .titleOmar {
-  font-size: 5rem;
-  font-family: "Russo One", sans-serif;
-}
-
-.aboutMe .omarDescription {
-  font-size: 1.4rem;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
-  color: #ddd;
-  margin-top: 2rem;
+  width: 100%;
+  padding: 4rem 0 4rem 0;
+  position: relative;
 }
 
 .aboutMe .download-btn {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   padding: 1.1rem 2.99rem;
   position: relative;
   padding-right: 4rem;
-  font-weight: 500;
 }
 
 .aboutMe .download-btn i {
@@ -5677,12 +5723,11 @@ header .toggle .line3 {
 }
 
 .aboutMe #myCanvasContainer canvas {
-  margin-top: 7rem;
+  z-index: 10;
 }
 
 .aboutMe #tags a {
   color: #00A97F;
-  font-family: "Work Sans", sans-serif;
   font-weight: 700;
   font-size: 1.9rem;
 }
