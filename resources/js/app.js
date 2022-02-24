@@ -435,6 +435,7 @@ jQuery(function($) {
 // skill initializing
 $(document).ready(function() {
     if (!$('#myCanvas').tagcanvas({
+            textFont: 'Russo One',
             outlineColour: '#2aab8a',
             outlineDash: 2,
             outlineDashSpace: 5,
@@ -494,6 +495,18 @@ $(document).ready(function() {
     }
 });
 
+
+// use the Google web font loader:
+(function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,500;0,600;1,300&family=Quattrocento:wght@400;700&family=Russo+One&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap';
+    console.log(wf)
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
 
 
 ///main-banner moon parallax

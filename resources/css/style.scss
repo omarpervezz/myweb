@@ -3,8 +3,8 @@
 @import url("./font.css");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,500;0,600;1,300&family=Quattrocento:wght@400;700&family=Russo+One&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+// @import './icon';
 @import './ball';
-@import './icon';
 @import './reboundanimation';
 @import './humberger';
 // Global variable
@@ -125,6 +125,7 @@ section {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
+
 .titleOmar {
     padding-top: 4rem;
     font-size: 5rem;
@@ -139,6 +140,7 @@ section {
         color: #fff;
     }
 }
+
 .omarDescription {
     font-size: 1.4rem;
     font-family: $fontHead;
@@ -147,6 +149,7 @@ section {
     color: rgb(236, 232, 232);
     margin-top: 2rem;
 }
+
 // header css
 header {
     position: fixed;
@@ -154,8 +157,8 @@ header {
     right: 0px;
     overflow: hidden;
     width: 100%;
-    transition-property: background, border-bottom;
-    transition-duration: 3s;
+    // transition-property: background, border-bottom;
+    // transition-duration: 0.4s;
     z-index: 999;
     nav {
         display: flex;
@@ -179,7 +182,7 @@ header {
                     width: 5rem;
                     margin-top: 16px;
                     margin-right: 7px;
-                    border: 4px solid #41e5bc;
+                    border: 4px solid #f1f1f1;
                     border-radius: 50%;
                 }
                 img:hover {
@@ -193,8 +196,9 @@ header {
                     width: 14rem;
                     font-size: 3.9rem;
                     font-weight: 700;
-                    color: #41e5bc;
+                    color: #f1f1f1;
                     margin-top: 22px;
+                    text-shadow: 0px 0px 0 rgb(35, 148, 110), -1px 0px 0 rgb(4, 117, 79), -2px 0px 0 rgb(-28, 85, 47), -3px 0px 0 rgb(-59, 54, 16), -4px 0px 0 rgb(-90, 23, 0), -5px 0px 0 rgb(-121, -8, 0), -6px 0px 0 rgb(-153, -40, 0), -7px 0px 0 rgb(-184, -71, 0), -8px 0px 0 rgb(-215, -102, 0), -9px 0px 8px rgba(0, 0, 0, 0.66), -9px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 8px rgba(0, 0, 0, .2);
                 }
             }
         }
@@ -210,8 +214,8 @@ header {
                     font-size: 1.4rem;
                     font-weight: 300;
                     padding: 0.5rem 2rem;
-                    border: 0.3px solid #41e5bc;
-                    color: #41e5bc;
+                    border: 0.3px solid #f1f1f1;
+                    color: #f1f1f1;
                     border-radius: 1.7rem;
                 }
                  :hover {
@@ -253,8 +257,8 @@ header {
     }
 } // end header
 .nav_bg_adder {
-    background: rgb(0, 0, 0);
-    // border-bottom: 0.2px solid rgb(38, 41, 46);
+    background: hsl(0, 0%, 5%);
+    border-bottom: 0.2px solid rgb(38, 41, 46);
 }
 
 // header responsive css
@@ -352,15 +356,8 @@ header {
         height: 100%;
         position: absolute;
     }
-    .omar_img {
-        width: 12.125rem;
-        height: 12.125rem;
-        max-height: 12.125rem;
-        max-width: 12.125rem;
-        border-radius: 50%;
-        background-clip: padding-box;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-        z-index: 20;
+    .banner_avatar {
+        margin-top: 14rem;
     }
     .text-animation {
         margin: 29px 0 15px 0;
@@ -399,6 +396,14 @@ header {
         display: none;
     }
 } // end banner
+// end banner responsive
+@media only screen and (max-width: $layout-breakpoint-md) {
+    .banner_avatar .lotiAnimtion {
+        width: 130px !important;
+        height: 130px !important;
+    }
+}
+
 // about me
 .aboutMe {
     width: 100%;
