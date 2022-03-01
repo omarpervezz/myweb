@@ -5508,10 +5508,6 @@ header nav .logo_link .logo img {
   border-radius: 50%;
 }
 
-header nav .logo_link .logo img:hover {
-  border: 1px solid red;
-}
-
 header nav .logo_link .logo .logo_text {
   font-family: "Russo One", sans-serif;
   display: -webkit-box;
@@ -5555,16 +5551,17 @@ header nav ul li :hover {
   text-decoration: none;
 }
 
-header .hamburger {
+.hamburger {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   right: 4rem;
   top: 42px;
   cursor: pointer;
   display: none;
+  z-index: 1000;
 }
 
-header .hamburger div {
+.hamburger div {
   width: 30px;
   height: 2px;
   background-color: #c9c5c3;
@@ -5576,26 +5573,12 @@ header .hamburger div {
   transition: all 0.3s ease 0s;
 }
 
-header .hamburger .line2 {
+.hamburger .line2 {
   width: 15px;
   -webkit-transition-property: width;
   transition-property: width;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
-}
-
-header .toggle .line1 {
-  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-          transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-header .toggle .line2 {
-  opacity: 0;
-}
-
-header .toggle .line3 {
-  -webkit-transform: rotate(45deg) translate(-3px, -5px);
-          transform: rotate(45deg) translate(-3px, -5px);
 }
 
 .nav_bg_adder {
@@ -5604,85 +5587,14 @@ header .toggle .line3 {
 }
 
 @media only screen and (max-width: 992px) {
-  header nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  header ul {
+    display: none;
   }
-  .first_div {
-    -webkit-transition-property: right, background, opacity;
-    transition-property: right, background, opacity;
-    -webkit-transition-duration: 0.5s;
-            transition-duration: 0.5s;
-    width: 45rem;
-    height: 400px;
-    overflow: hidden;
-    z-index: 1000;
-    position: fixed;
-    right: -530px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.75) -9px 11px 14px 6px;
-            box-shadow: rgba(0, 0, 0, 0.75) -9px 11px 14px 6px;
-    top: 25rem;
-    opacity: 0.5;
+  header .container {
+    max-width: 100%;
   }
-  .adding_div {
-    background: rgba(5, 110, 100, 0.48);
-    right: 0px;
-    z-index: 100;
-    opacity: 0.9;
-  }
-  header nav ul {
-    border-left: 4px solid #ffffff;
-    position: fixed;
-    right: -530px;
-    -webkit-transition-property: right, background;
-    transition-property: right, background;
-    -webkit-transition-duration: 1s;
-            transition-duration: 1s;
-    width: 45rem;
-    top: 48px;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .open {
-    background: black;
-    right: 0px;
-    z-index: 100;
-    overscroll-behavior-y: none;
-  }
-  header nav ul li {
+  .hamburger {
     display: block;
-    text-align: center;
-    padding: 2rem 0px;
-    opacity: 1 !important;
-  }
-  header nav ul li a {
-    color: white;
-  }
-  header nav .hamburger {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  header nav ul {
-    width: 100%;
-  }
-  .first_div {
-    width: 100%;
   }
 }
 
@@ -5825,5 +5737,12 @@ header .toggle .line3 {
   #myCanvasContainer canvas {
     margin-top: 3rem;
   }
+}
+
+.portfolio-p {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.158)), to(rgba(0, 0, 0, 0.137))) url("../img/bg/bgmedium.jpeg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.158), rgba(0, 0, 0, 0.137)) url("../img/bg/bgmedium.jpeg") no-repeat;
+  background-size: contain;
+  background-position: center bottom;
 }
 /*# sourceMappingURL=style.css.map */

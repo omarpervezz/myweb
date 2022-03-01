@@ -157,8 +157,6 @@ header {
     right: 0px;
     overflow: hidden;
     width: 100%;
-    // transition-property: background, border-bottom;
-    // transition-duration: 0.4s;
     z-index: 999;
     nav {
         display: flex;
@@ -184,9 +182,6 @@ header {
                     margin-right: 7px;
                     border: 4px solid #f1f1f1;
                     border-radius: 50%;
-                }
-                img:hover {
-                    border: 1px solid red;
                 }
                 .logo_text {
                     font-family: $BigFont;
@@ -225,37 +220,32 @@ header {
             }
         }
     }
-    .hamburger {
-        overflow: hidden;
-        position: absolute;
-        right: 4rem;
-        top: 42px;
-        cursor: pointer;
-        display: none;
-        div {
-            width: 30px;
-            height: 2px;
-            background-color: #c9c5c3;
-            margin: 5px 0px;
-            display: flex;
-            transition: all 0.3s ease 0s;
-        }
-        .line2 {
-            width: 15px;
-            transition-property: width;
-            transition-duration: 0.3s;
-        }
-    }
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .toggle .line2 {
-        opacity: 0;
-    }
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-3px, -5px);
-    }
+   
+   
 } // end header
+.hamburger {
+    overflow: hidden;
+    position: fixed;
+    right: 4rem;
+    top: 42px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+
+    div {
+        width: 30px;
+        height: 2px;
+        background-color: #c9c5c3;
+        margin: 5px 0px;
+        display: flex;
+        transition: all 0.3s ease 0s;
+    }
+    .line2 {
+        width: 15px;
+        transition-property: width;
+        transition-duration: 0.3s;
+    }
+}
 .nav_bg_adder {
     background: hsl(0, 0%, 5%);
     border-bottom: 0.2px solid rgb(38, 41, 46);
@@ -263,70 +253,17 @@ header {
 
 // header responsive css
 @media only screen and (max-width: $layout-breakpoint-lg) {
-    header nav {
-        flex-direction: column;
+    header ul{
+        display: none;
     }
-    .first_div {
-        transition-property: right, background, opacity;
-        transition-duration: 0.5s;
-        width: 45rem;
-        height: 400px;
-        overflow: hidden;
-        z-index: 1000;
-        position: fixed;
-        right: -530px;
-        box-shadow: rgba(0, 0, 0, 0.75) -9px 11px 14px 6px;
-        top: 25rem;
-        opacity: 0.5;
+    header .container{
+        max-width: 100%;
     }
-    .adding_div {
-        background: rgba(5, 110, 100, 0.48);
-        right: 0px;
-        z-index: 100;
-        opacity: 0.9;
-    }
-    header nav ul {
-        border-left: 4px solid #ffffff;
-        position: fixed;
-        right: -530px;
-        transition-property: right, background;
-        transition-duration: 1s;
-        width: 45rem;
-        top: 48px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .open {
-        background: rgb(0, 0, 0);
-        right: 0px;
-        z-index: 100;
-        overscroll-behavior-y: none;
-    }
-    header nav ul li {
-        display: block;
-        text-align: center;
-        padding: 2rem 0px;
-        opacity: 1 !important;
-    }
-    header nav ul li a {
-        color: rgb(255, 255, 255);
-    }
-    header nav .hamburger {
+   .hamburger{
         display: block;
     }
 }
 
-@media screen and (max-width: $layout-breakpoint-small) {
-    header nav ul {
-        width: 100%;
-    }
-    .first_div {
-        width: 100%;
-    }
-}
 
 // banner css
 .banner_info {
@@ -447,4 +384,10 @@ header {
             margin-top: 3rem;
         }
     }
+}
+// portfolio
+.portfolio-p{
+    background: linear-gradient(rgba(0, 0, 0, 0.158),rgba(0, 0, 0, 0.137)) url('../img/bg/bgmedium.jpeg') no-repeat;
+    background-size: contain;
+    background-position: center bottom;
 }

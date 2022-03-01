@@ -1,88 +1,166 @@
-<!DOCTYPE html>
-<html>
-<style>
-    #mydiv {
-        position: absolute;
-        z-index: 9;
-        background-color: #f1f1f1;
-        text-align: center;
-        border: 1px solid #d3d3d3;
-    }
-    
-    #mydivheader {
-        padding: 10px;
-        cursor: move;
-        z-index: 10;
-        background-color: #2196F3;
-        color: #fff;
-    }
-</style>
-
-<body>
-
-    <h1>Draggable DIV Element</h1>
-
-    <p>Click and hold the mouse button down while moving the DIV element</p>
-
-    <div id="mydiv">
-        <div id="mydivheader">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
+  <!--------- HEADER AREA ---------->
+  <header class="vhs-flicker nav_bg_adder">
+    <div class="container">
+        <nav id="header">
+            <a href="#header" class="logo_link">
+                <div class="logo">
+                    <img src="https://turkce-sozluk.com/api/src/Avatar.png" alt="Logo Image">
+                    <h4 class="logo_text">Omar</h4>
+                </div>
+            </a>
+            <!-- <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div> -->
+            <div class="first_div">
+                <div class="second_div">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about_me">About</a></li>
+                        <li><a href="#roadMap">Service</a></li>
+                        <li><a href="outplatforms.html" target="blank">Experience</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
+    
+</header>
+<div data-pushbar-id="mypushbar1" data-pushbar-direction="left">
+    <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about_me">About</a></li>
+    <li><a href="#roadMap">Service</a></li>
+    <li><a href="outplatforms.html" target="blank">Experience</a></li>
+</ul>
+    <button data-pushbar-close><i class="fas fa-close"></i></button>
+</div>
+<div class="pushbar_main_content">
+    <div class="hamburger" data-pushbar-target="mypushbar1">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <!-- <button data-pushbar-target="mypushbar1">click me</button> -->
+</div>
+<!--------- HEADER AREA ---------->
 
-    <script>
-        //Make the DIV element draggagle:
-        dragElement(document.getElementById("mydiv"));
 
-        function dragElement(elmnt) {
-            console.log(document.getElementById(elmnt.id + "header"));
-            var pos1 = 0,
-                pos2 = 0,
-                pos3 = 0,
-                pos4 = 0;
-            if (document.getElementById(elmnt.id + "header")) {
-                /* if present, the header is where you move the DIV from:*/
-                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-            } else {
-                /* otherwise, move the DIV from anywhere inside the DIV:*/
-                elmnt.onmousedown = dragMouseDown;
+
+
+
+
+
+
+
+
+
+
+
+
+// header css
+header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+    width: 100%;
+    // transition-property: background, border-bottom;
+    // transition-duration: 0.4s;
+    z-index: 999;
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 97px;
+        .logo_link {
+            text-decoration: none;
+            h4 {
+                span {
+                    color: #C9C5C3;
+                }
             }
-
-            function dragMouseDown(e) {
-                console.log('dragemouse' + e)
-                e = e || window.event;
-                e.preventDefault();
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
-            }
-
-            function elementDrag(e) {
-                console.log('elementDrag' + e)
-                e = e || window.event;
-                e.preventDefault();
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-            }
-
-            function closeDragElement() {
-                /* stop moving when mouse button is released:*/
-                document.onmouseup = null;
-                document.onmousemove = null;
+            .logo {
+                padding: 1.4vh 1vw;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+                img {
+                    height: 5rem;
+                    width: 5rem;
+                    margin-top: 16px;
+                    margin-right: 7px;
+                    border: 4px solid #f1f1f1;
+                    border-radius: 50%;
+                }
+                img:hover {
+                    border: 1px solid red;
+                }
+                .logo_text {
+                    font-family: $BigFont;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 2rem;
+                    width: 14rem;
+                    font-size: 3.9rem;
+                    font-weight: 700;
+                    color: #f1f1f1;
+                    margin-top: 22px;
+                    text-shadow: 0px 0px 0 rgb(35, 148, 110), -1px 0px 0 rgb(4, 117, 79), -2px 0px 0 rgb(-28, 85, 47), -3px 0px 0 rgb(-59, 54, 16), -4px 0px 0 rgb(-90, 23, 0), -5px 0px 0 rgb(-121, -8, 0), -6px 0px 0 rgb(-153, -40, 0), -7px 0px 0 rgb(-184, -71, 0), -8px 0px 0 rgb(-215, -102, 0), -9px 0px 8px rgba(0, 0, 0, 0.66), -9px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 8px rgba(0, 0, 0, .2);
+                }
             }
         }
-    </script>
+        ul {
+            margin-top: 4.9rem;
+            li {
+                display: inline-block;
+                a {
+                    font-family: $fontHead;
+                    text-decoration: none;
+                    margin: 0 1.5rem;
+                    text-transform: uppercase;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    padding: 0.5rem 2rem;
+                    border: 0.3px solid #f1f1f1;
+                    color: #f1f1f1;
+                    border-radius: 1.7rem;
+                }
+                 :hover {
+                    color: $text-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+   
+   
+} // end header
+.hamburger {
+    overflow: hidden;
+    position: fixed;
+    right: 4rem;
+    top: 42px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
 
-</body>
-
-</html>
+    div {
+        width: 30px;
+        height: 2px;
+        background-color: #c9c5c3;
+        margin: 5px 0px;
+        display: flex;
+        transition: all 0.3s ease 0s;
+    }
+    .line2 {
+        width: 15px;
+        transition-property: width;
+        transition-duration: 0.3s;
+    }
+}
+.nav_bg_adder {
+    background: hsl(0, 0%, 5%);
+    border-bottom: 0.2px solid rgb(38, 41, 46);
+}

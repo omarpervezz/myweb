@@ -1,21 +1,4 @@
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const links = document.querySelectorAll(".nav-links li");
-const overlayY = document.querySelector('.first_div');
 
-// humbugger menu
-hamburger.addEventListener('click', () => {
-    //Animate Links
-    navLinks.classList.toggle("open");
-    // navLinks.classList.remove("remove");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-    overlayY.classList.toggle('adding_div')
-        //Hamburger Animation
-    hamburger.classList.toggle("toggle");
-
-});
 
 // Header Type = Fixed
 $(window).scroll(function() {

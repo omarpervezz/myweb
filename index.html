@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="vendor/normalize/Normalize.css">
     <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
     <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.css">
     <!-- SLICK SLIDER CSS -->
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="resources/css/style.css">
@@ -30,7 +31,7 @@
 
 <body>
     <!--------- HEADER AREA ---------->
-    <header>
+    <header class="vhs-flicker nav_bg_adder">
         <div class="container">
             <nav id="header">
                 <a href="#header" class="logo_link">
@@ -39,10 +40,12 @@
                         <h4 class="logo_text">Omar</h4>
                     </div>
                 </a>
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+                <div class="pushbar_main_content">
+                    <div class="hamburger" data-pushbar-target="mypushbar1">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
                 </div>
                 <div class="first_div">
                     <div class="second_div">
@@ -57,7 +60,15 @@
             </nav>
         </div>
     </header>
-
+    <div data-pushbar-id="mypushbar1" data-pushbar-direction="right">
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about_me">About</a></li>
+        <li><a href="#roadMap">Service</a></li>
+        <li><a href="outplatforms.html" target="blank">Experience</a></li>
+    </ul>
+        <button data-pushbar-close><i class="fas fa-close"></i></button>
+    </div>
     <!--------- HEADER AREA ---------->
     <!--------- MAIN AREA ---------->
     <main>
@@ -172,7 +183,7 @@
         </section>
         <!--about me-->
         <!--portfolio-->
-        <section>
+        <section class="portfolio-p">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-start align-self-start">
@@ -191,7 +202,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        
         <!--portfolio head-->
         <!--portfolio img-->
         <div class="container">
@@ -226,6 +237,7 @@
                 </div>
             </div>
         </div>
+    </section>
         <!--portfolio img-->
     </main>
     <!--------- MAIN AREA ---------->
@@ -239,6 +251,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="resources/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pushbar.js@1.0.0/src/pushbar.min.js"></script>
+  <script type="text/javascript">
+    const pushbar =   new Pushbar({
+          blur:true,
+          overlay:true,
+        });
+  
+    //open a pushbar
+    pushbar.open('mypushbar1');	
+    //close all pushbars
+    pushbar.close();
+    </script>script>
 </body>
 
 </html>
