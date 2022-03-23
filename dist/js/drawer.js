@@ -16,6 +16,7 @@
     factory(jQuery);
   }
 }(function Drawer($) {
+  console.log($)
   'use strict';
   var namespace = 'drawer';
   var touches = typeof document.ontouchstart != 'undefined';
@@ -28,6 +29,8 @@
         },
         showOverlay: true
       }, options);
+
+// end inti function
 
       __.settings = {
         state: false,
